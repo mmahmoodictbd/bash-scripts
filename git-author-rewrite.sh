@@ -1,8 +1,8 @@
 #!/bin/sh
 
-git filter-branch --env-filter '
+git filter-branch -f --env-filter '
 
-OLD_EMAIL="mossaddequemahmood.dsi@gmail.com"
+OLD_EMAIL="mossaddeque@org.com"
 CORRECT_NAME="Mossaddeque Mahmood"
 CORRECT_EMAIL="mmahmood.ict.bd@gmail.com"
 
@@ -17,3 +17,6 @@ then
     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
 fi
 ' --tag-name-filter cat -- --branches --tags
+
+echo 'Run following afterwards:'
+echo 'git push --force --tags origin HEAD:master'
